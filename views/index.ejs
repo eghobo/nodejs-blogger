@@ -14,6 +14,10 @@
     <div class="jumbotron text-center">
         <h1><span class="fa fa-lock"></span> Blogger</h1>
 
+        <% if (typeof message !== 'undefined' && message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
         <p>Login or Signup</p>
 
         <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
