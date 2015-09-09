@@ -21,9 +21,11 @@
         <% if (!user) { %>
         <p>Login or Signup</p>
 
+        <a href="/" class="btn btn-default"><span class="fa fa-user"></span> Home</a>
         <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
         <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
         <% } else { %>
+        <a href="/" class="btn btn-default"><span class="fa fa-user"></span> Home</a>
         <a href="/profile" class="btn btn-default"><span class="fa fa-user"></span> Profile</a>
         <a href="/logout" class="btn btn-default"><span class="fa fa-user"></span> Logout</a>
         <% } %>
@@ -31,12 +33,7 @@
 
     <div class="row">
         <div class="well">
-            <h3><span class="fa fa-laptop"></span> Blogs</h3>
-            <ul>
-                <% users.forEach(function(u) { %>
-                <li><a href="/blog/<%= u.id %>"><%= u.blogTitle %></a></li>
-                <% }); %>
-            </ul>
+            <h3><span class="fa fa-laptop"></span> Blog: <%= user.blogTitle %></h3>
         </div>
     </div>
 

@@ -8,6 +8,7 @@ let flash = require('connect-flash');
 let mongoose = require('mongoose');
 let passportMiddleware = require('./middleware/passport');
 let routes = require('./routes');
+let MongoStore = require('connect-mongo')(session);
 
 // Will allow crypto.promise.pbkdf2(...)
 require('songbird');
@@ -28,12 +29,14 @@ app.use(cookieParser('ilovethenodejs'));
 // Get POST/PUT body information (e.g., from html forms like login)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(require('express-method-override')('_method'));
 
 // In-memory session support, required by passport.session()
 app.use(session({
     secret: 'ilovethenodejs',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
 // Use the passport middleware to enable passport
@@ -46,7 +49,7 @@ app.use(flash());
 passportMiddleware(app);
 routes(app);
 
-mongoose.connect('mongodb://127.0.0.1:27017/authenticator');
+mongoose.connect('mongodb://127.0.0.1:27017/bloger');
 
 // start server
 app.listen(PORT, ()=> console.log(`Listening @ http://127.0.0.1:${PORT}`));
