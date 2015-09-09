@@ -2,20 +2,20 @@
 
 This is a basic Blogger clone to create a blog with comments.
 
-Time spent: `<Number of hours spent>`
+Time spent: `16`
 
 ### Features
 
 #### Required
 
-- [ ] User can Signup, Login and Logout with input validation
-- [ ] Session and user accounts are persisted in a data store
-- [ ] User can create and edit a blog post
-- [ ] User can view blog posts with details on their Profile
-- [ ] User can view anyone's blog with posts at the specified url
-- [ ] User can comments on their blog posts on their Profile
-- [ ] Logged In users can comment on any blog post
-- [ ] Comments are viewable at the bottom of the associated blog post
+- [x] User can Signup, Login and Logout with input validation
+- [x] Session and user accounts are persisted in a data store
+- [x] User can create and edit a blog post
+- [x] User can view blog posts with details on their Profile
+- [x] User can view anyone's blog with posts at the specified url
+- [x] User can comments on their blog posts on their Profile
+- [x] Logged In users can comment on any blog post
+- [x] Comments are viewable at the bottom of the associated blog post
 
 ### Optional
 
@@ -33,4 +33,4 @@ Time spent: `<Number of hours spent>`
 
 ### Walkthrough
 
-![Video Walkthrough](...)
+![Video Walkthrough](http://i.imgur.com/g5bzbjb.gif)
